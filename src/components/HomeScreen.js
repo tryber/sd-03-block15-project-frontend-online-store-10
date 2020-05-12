@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css';
 
 class HomeScreen extends Component {
   render() {
