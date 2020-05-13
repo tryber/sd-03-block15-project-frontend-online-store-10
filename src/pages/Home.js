@@ -1,7 +1,7 @@
 import React from 'react';
 import BarraEsquerda from '../components/Sidebar';
-import { CarLink } from '../components/CartLink';
-import { GridProdutos } from '../components/GridProdutos';
+import { CartLink } from '../components/CartLink';
+import { GridProdutos } from '../components/GridProduto';
 import MessagemInicial from '../components/InitialMessage';
 import * as api from '../services/api';
 
@@ -62,7 +62,7 @@ class Home extends React.Component {
         </div>
         {this.searchBar()}
         <div>
-          <CarLink />
+          <CartLink />
         </div>
         <div>
           {apiResults.length === 0 ? <MessagemInicial /> : <GridProdutos products={apiResults} />}

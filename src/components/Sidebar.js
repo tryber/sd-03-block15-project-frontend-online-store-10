@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class BarraEsquerda extends Component {
+class Sidebar extends Component {
   render() {
     const { categorias } = this.props;
     return (
