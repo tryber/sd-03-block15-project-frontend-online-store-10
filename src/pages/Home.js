@@ -3,6 +3,7 @@ import BarraEsquerda from '../components/Sidebar';
 import { CartLink } from '../components/CartLink';
 import { GridProdutos } from '../components/GridProduto';
 import MessagemInicial from '../components/InitialMessage';
+import NavBar from '../components/NavBar';
 import * as api from '../services/api';
 
 class Home extends React.Component {
@@ -23,8 +24,8 @@ class Home extends React.Component {
     return api.getCategories().then((data) => this.setState({ categories: data }));
   }
 
-  handleSearchInput(e) {
-    this.setState({ query: e.target.value });
+  handleSearchInput(event) {
+    this.setState({ query: event.target.value });
   }
 
   handleSearchSubmit() {
@@ -56,16 +57,15 @@ class Home extends React.Component {
   render() {
     const { categories, apiResults } = this.state;
     return (
-      <div>
-        <div>
-          <BarraEsquerda categorias={categories} />
-        </div>
-        {this.searchBar()}
-        <div>
-          <CartLink />
-        </div>
-        <div>
+      <div className="">
+        <nav className="navbar bg-info">
+          <NavBar />
+        </nav>
+        <div className="container">
           {apiResults.length === 0 ? <MessagemInicial /> : <GridProdutos products={apiResults} />}
+          {this.searchBar()}
+          <CartLink />
+          <BarraEsquerda categorias={categories} />
         </div>
       </div>
     );
