@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Card from './CardProduts';
 import CardColumns from 'react-bootstrap/CardColumns';
+import Card from './CardProduts';
 
 export class GridProdutos extends Component {
   render() {

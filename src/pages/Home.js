@@ -5,7 +5,6 @@ import { GridProdutos } from '../components/GridProduto';
 import MessagemInicial from '../components/InitialMessage';
 import NavBar from '../components/NavBar';
 import * as api from '../services/api';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Home extends React.Component {
   constructor() {
@@ -59,7 +58,7 @@ class Home extends React.Component {
     const { categories, apiResults } = this.state;
     return (
       <div className="">
-        <nav className="navbar bg-dark">
+        <nav className="navbar bg-info">
           <NavBar />
         </nav>
         <div className="container">
@@ -72,5 +71,5 @@ class Home extends React.Component {
     );
   }
 }
- 
+
 export default Home;

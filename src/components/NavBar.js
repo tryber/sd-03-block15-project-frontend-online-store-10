@@ -8,7 +8,7 @@ class NavBar extends Component {
       <div className="">
         <header className="">
           <nav className="">
-            <h1 className="bg-light">Traning store</h1>
+            <h1 className="">Traning store</h1>
           </nav>
         </header>
       </div>
