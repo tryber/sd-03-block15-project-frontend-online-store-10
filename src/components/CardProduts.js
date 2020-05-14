@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 export class CardProduts extends Component {
   render() {
@@ -15,6 +16,7 @@ export class CardProduts extends Component {
           <button type="button" onClick={onAddToCart} data-testid="product-add-to-cart">
             Adicionar ao Carrinho
           </button>
+          <Link to={{ pathname: `/itemdetail/${id}`, state: { product } }}>Detalhes</Link>
         </Card.Body>
       </Card>
     );
