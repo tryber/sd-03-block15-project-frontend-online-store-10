@@ -5,9 +5,9 @@ import '../App.css';
 class NavBar extends Component {
   render() {
     return (
-      <div className="">
-        <header className="">
-          <nav className="">
+      <div>
+        <header>
+          <nav>
             <h1 className="">Traning store</h1>
           </nav>
         </header>

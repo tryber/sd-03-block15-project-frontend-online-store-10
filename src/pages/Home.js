@@ -58,12 +58,13 @@ class Home extends React.Component {
     const { categories, apiResults } = this.state;
     return (
       <div className="">
-        <nav className="navbar bg-info">
+        <nav className="navbar bg-info" id="navbar">
           <NavBar />
+          {this.searchBar()}
         </nav>
         <div className="container">
           {apiResults.length === 0 ? <MessagemInicial /> : <GridProdutos products={apiResults} />}
-          {this.searchBar()}
+
           <CartLink />
           <BarraEsquerda categorias={categories} />
         </div>
