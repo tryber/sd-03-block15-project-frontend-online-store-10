@@ -34,8 +34,6 @@ export class CardProduts extends Component {
     );
   }
 }
-const mapStateToProps = (state) => ({
-  cart: state.cart,
-});
+const mapStateToProps = (state) => ({ cart: state.cart });
 const mapDispatchToProps = (dispatch) => bindActionCreators(cartActions, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(CardProduts);
