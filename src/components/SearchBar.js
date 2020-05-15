@@ -7,7 +7,7 @@ const searchBar = () => {
     <div>
       <input
         data-testid="query-input"
-        placeholder="Insira o caminho da imagem"
+        placeholder="Insira sua pesquisa"
         id="search-input"
         type="text"
         value={query}

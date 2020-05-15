@@ -16,7 +16,12 @@ export class CardProduts extends Component {
           <button type="button" onClick={onAddToCart} data-testid="product-add-to-cart">
             Adicionar ao Carrinho
           </button>
-          <Link to={{ pathname: `/itemdetail/${id}`, state: { product } }}>Detalhes</Link>
+          <Link
+            to={{ pathname: `/itemdetail/${id}`, state: { product } }}
+            data-testid="product-detail-link"
+          >
+            Detalhes
+          </Link>
         </Card.Body>
       </Card>
     );

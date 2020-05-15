@@ -9,7 +9,7 @@ class ProductDetail extends React.Component {
     return (
       <div>
         <Navbar />
-        <h4>{product.title}</h4>
+        <h4 data-testid="product-detail-name">{product.title}</h4>
         <ul className="list-unstyled">
           <Media as="li">
             <img
