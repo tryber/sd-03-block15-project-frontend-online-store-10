@@ -13,7 +13,7 @@ const searchBar = () => {
         value={query}
         onChange={handleSearchInput}
       />
-      <button data-testid="query-button" type="button" onClick={handleSearchSubmit}>
+      <button data-testid="query-button" type="button" onClick={handleSearchSubmit()}>
         Pesquisar
       </button>
     </div>

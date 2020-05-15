@@ -1,5 +1,5 @@
 import React from 'react';
-import BarraEsquerda from '../components/Sidebar';
+import SideBar from '../components/Sidebar';
 import { CartLink } from '../components/CartLink';
 import { GridProdutos } from '../components/GridProduto';
 import MessagemInicial from '../components/InitialMessage';
@@ -13,6 +13,7 @@ class Home extends React.Component {
       query: '',
       apiResults: [],
       categories: [],
+      selectCategory: '',
     };
 
     this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
@@ -29,9 +30,9 @@ class Home extends React.Component {
   }
 
   handleSearchSubmit() {
-    const { query } = this.state;
+    const { query, selectCategory } = this.state;
     api
-      .getProductsFromCategoryAndQuery('', query)
+      .getProductsFromCategoryAndQuery(selectCategory, query)
       .then((data) => this.setState({ apiResults: data.results }));
   }
 
@@ -45,7 +46,7 @@ class Home extends React.Component {
           id="search-input"
           type="text"
           value={query}
-          onChange={this.handleSearchInput}
+          handleClick={this.handleSearchInput}
         />
         <button data-testid="query-button" type="button" onClick={this.handleSearchSubmit}>
           Pesquisar
@@ -55,7 +56,7 @@ class Home extends React.Component {
   }
 
   render() {
-    const { categories, apiResults } = this.state;
+    const { categories, apiResults, selectCategory } = this.state;
     return (
       <div className="">
         <nav className="navbar bg-info" id="navbar">
@@ -63,10 +64,16 @@ class Home extends React.Component {
           {this.searchBar()}
         </nav>
         <div className="container">
+          <SideBar
+            onChangeSideBar={(e) => {
+              this.setState({ selectCategory: e.target.value });
+              setTimeout(() => this.handleSearchSubmit(), 500);
+            }}
+            categorias={categories}
+            selectCategory={selectCategory}
+          />
           {apiResults.length === 0 ? <MessagemInicial /> : <GridProdutos products={apiResults} />}
-
           <CartLink />
-          <BarraEsquerda categorias={categories} />
         </div>
       </div>
     );
