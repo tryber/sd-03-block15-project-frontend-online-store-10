@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import * as cartActions from '../actions/cart';
 
 export class CardProduts extends Component {
-  addNewItem = () => {
+  static addNewItem = () => {
     console.log(this.props.product);
     this.props.addToCart(this.props.product);
   };
