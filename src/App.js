@@ -6,18 +6,19 @@ import Cart from './pages/Cart';
 import ProductDetail from './pages/ProductDetail';
 import { Provider } from 'react-redux';
 import store from './store/index';
-
 function App() {
   return (
     <div className="">
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/cart" component={Cart} />
-          <Route exact path="/itemdetail" component={ProductDetail} />
-          <Route exact path="/itemdetail/:str" component={ProductDetail} />
-        </Switch>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/cart" component={Cart} />
+            <Route exact path="/itemdetail" component={ProductDetail} />
+            <Route exact path="/itemdetail/:str" component={ProductDetail} />
+          </Switch>
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 }
