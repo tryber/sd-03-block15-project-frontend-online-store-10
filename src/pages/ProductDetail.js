@@ -7,7 +7,11 @@ import Rating from '../components/Rating';
 import * as cartActions from '../actions/cart';
 
 class ProductDetail extends React.Component {
-  static addNewItem() {
+  constructor(props) {
+    super(props);
+    this.addNewItem = this.addNewItem.bind(this);
+  }
+  addNewItem() {
     this.props.addToCart(this.props.location.state.product);
   }
   render() {
