@@ -1,9 +1,9 @@
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import * as cartActions from '../actions/cart';
-import { connect } from 'react-redux';
 
 export class CardProduts extends Component {
   addNewItem = () => {
