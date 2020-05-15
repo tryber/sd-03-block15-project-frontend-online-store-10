@@ -1,13 +1,12 @@
 import React from 'react';
 
 const searchBar = () => {
-  console.log(this.props);
   const { query, handleSearchInput, handleSearchSubmit } = this.props;
   return (
     <div>
       <input
         data-testid="query-input"
-        placeholder="Insira o caminho da imagem"
+        placeholder="Insira sua pesquisa"
         id="search-input"
         type="text"
         value={query}

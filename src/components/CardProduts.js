@@ -1,26 +1,45 @@
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import * as cartActions from '../actions/cart';
 
 export class CardProduts extends Component {
+  constructor(props) {
+    super(props);
+    this.addNewItem = this.addNewItem.bind(this);
+  }
+  addNewItem() {
+    this.props.addToCart(this.props.product);
+  }
+
   render() {
+    console.log(this.props);
     const { product } = this.props;
-    const { id, title, thumbnail, price, onAddToCart } = product;
+    const { id, title, thumbnail, price } = product;
     return (
       <Card className="text-center" border="dark" style={{ width: '18rem' }} data-testid="product">
         <Card.Img variant="top" src={thumbnail} alt={title} />
         <Card.Body>
-          <Card.Title>{title}</Card.Title>
-          <h5 className="mb-2">{id}</h5>
-          <h5>{price}</h5>
-          <button type="button" onClick={onAddToCart} data-testid="product-add-to-cart">
+          <Card.Title>
+            <Link
+              to={{ pathname: `/itemdetail/${id}`, state: { product } }}
+              data-testid="product-detail-link"
+            >
+              {title}
+            </Link>
+          </Card.Title>
+          <h6 className="mb-2">{id}</h6>
+          <h6>{price}</h6>
+          <button type="button" onClick={this.addNewItem} data-testid="product-add-to-cart">
             Adicionar ao Carrinho
           </button>
-          <Link to={{ pathname: `/itemdetail/${id}`, state: { product } }}>Detalhes</Link>
         </Card.Body>
       </Card>
     );
   }
 }
-
-export default CardProduts;
+const mapStateToProps = (state) => ({ cart: state.cart });
+const mapDispatchToProps = (dispatch) => bindActionCreators(cartActions, dispatch);
+export default connect(mapStateToProps, mapDispatchToProps)(CardProduts);

@@ -1,15 +1,25 @@
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import React from 'react';
 import { Media } from 'react-bootstrap';
-import Navbar from '../components/NavBar';
+import CartLink from '../components/CartLink';
+import Rating from '../components/Rating';
+import * as cartActions from '../actions/cart';
 
 class ProductDetail extends React.Component {
+  constructor(props) {
+    super(props);
+    this.addNewItem = this.addNewItem.bind(this);
+  }
+  addNewItem() {
+    this.props.addToCart(this.props.location.state.product);
+  }
   render() {
-    console.log(this.props.location.state);
     const { product } = this.props.location.state;
     return (
       <div>
-        <Navbar />
-        <h4>{product.title}</h4>
+        <CartLink />
+        <h4 data-testid="product-detail-name">{product.title}</h4>
         <ul className="list-unstyled">
           <Media as="li">
             <img
@@ -28,10 +38,15 @@ class ProductDetail extends React.Component {
               </p>
             </Media.Body>
           </Media>
+          <Rating />
+          <button type="button" onClick={this.addNewItem} data-testid="product-detail-add-to-cart">
+            Adicionar ao Carrinho
+          </button>
         </ul>
       </div>
     );
   }
 }
-
-export default ProductDetail;
+const mapStateToProps = (state) => ({ cart: state.cart });
+const mapDispatchToProps = (dispatch) => bindActionCreators(cartActions, dispatch);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductDetail);

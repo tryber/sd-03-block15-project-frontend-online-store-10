@@ -18,6 +18,7 @@ class Home extends React.Component {
     this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
     this.handleSearchInput = this.handleSearchInput.bind(this);
     this.searchBar = this.searchBar.bind(this);
+    this.handleCategorySelect = this.handleCategorySelect.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +33,12 @@ class Home extends React.Component {
     const { query } = this.state;
     api
       .getProductsFromCategoryAndQuery('', query)
+      .then((data) => this.setState({ apiResults: data.results }));
+  }
+
+  handleCategorySelect(event) {
+    api
+      .getProductsFromCategoryAndQuery(event)
       .then((data) => this.setState({ apiResults: data.results }));
   }
 
@@ -57,16 +64,15 @@ class Home extends React.Component {
   render() {
     const { categories, apiResults } = this.state;
     return (
-      <div className="">
-        <nav className="navbar bg-info" id="navbar">
+      <div>
+        <nav className="container container-fluid navbar navbar-default bg-dark">
           <NavBar />
           {this.searchBar()}
+          <CartLink />
         </nav>
         <div className="container">
           {apiResults.length === 0 ? <MessagemInicial /> : <GridProdutos products={apiResults} />}
-
-          <CartLink />
-          <BarraEsquerda categorias={categories} />
+          <BarraEsquerda categorias={categories} handleCategorySelect={this.handleCategorySelect} />
         </div>
       </div>
     );
