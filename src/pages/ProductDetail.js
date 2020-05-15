@@ -2,8 +2,14 @@ import React from 'react';
 import { Media } from 'react-bootstrap';
 import CartLink from '../components/CartLink';
 import Rating from '../components/Rating';
+import { bindActionCreators } from 'redux';
+import * as cartActions from '../actions/cart';
+import { connect } from 'react-redux';
 
 class ProductDetail extends React.Component {
+  addNewItem = () => {
+    this.props.addToCart(this.props.location.state.product);
+  };
   render() {
     const { product } = this.props.location.state;
     return (
@@ -29,10 +35,16 @@ class ProductDetail extends React.Component {
             </Media.Body>
           </Media>
           <Rating />
+          <button type="button" onClick={this.addNewItem} data-testid="product-detail-add-to-cart">
+            Adicionar ao Carrinho
+          </button>
         </ul>
       </div>
     );
   }
 }
-
-export default ProductDetail;
+const mapStateToProps = (state) => ({
+  cart: state.cart,
+});
+const mapDispatchToProps = (dispatch) => bindActionCreators(cartActions, dispatch);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductDetail);

@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import * as cartActions from '../actions/cart';
+import { connect } from 'react-redux';
 
 export class CardProduts extends Component {
+  addNewItem = () => {
+    this.props.addToCart(this.props.product);
+  };
   render() {
-    const { product, addToCart } = this.props;
+    const { product } = this.props;
     const { id, title, thumbnail, price } = product;
     return (
       <Card className="text-center" border="dark" style={{ width: '18rem' }} data-testid="product">
@@ -20,7 +26,7 @@ export class CardProduts extends Component {
           </Card.Title>
           <h6 className="mb-2">{id}</h6>
           <h6>{price}</h6>
-          <button type="button" onClick={() => addToCart} data-testid="product-add-to-cart">
+          <button type="button" onClick={this.addNewItem} data-testid="product-add-to-cart">
             Adicionar ao Carrinho
           </button>
         </Card.Body>
@@ -28,5 +34,8 @@ export class CardProduts extends Component {
     );
   }
 }
-
-export default CardProduts;
+const mapStateToProps = (state) => ({
+  cart: state.cart,
+});
+const mapDispatchToProps = (dispatch) => bindActionCreators(cartActions, dispatch);
+export default connect(mapStateToProps, mapDispatchToProps)(CardProduts);
