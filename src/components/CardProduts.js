@@ -6,10 +6,12 @@ import { bindActionCreators } from 'redux';
 import * as cartActions from '../actions/cart';
 
 export class CardProduts extends Component {
-  static addNewItem() {
+  addNewItem = () => {
     this.props.addToCart(this.props.product);
-  }
+  };
+
   render() {
+    console.log(this.props);
     const { product } = this.props;
     const { id, title, thumbnail, price } = product;
     return (

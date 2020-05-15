@@ -5,6 +5,10 @@ import NavBar from '../components/NavBar';
 import CartUniqueItem from '../components/CartItem';
 
 class Cart extends Component {
+  constructor() {
+    super();
+    console.log(this.props);
+  }
   render() {
     return (
       <div>
