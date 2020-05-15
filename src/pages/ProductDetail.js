@@ -1,14 +1,14 @@
 import React from 'react';
 import { Media } from 'react-bootstrap';
-import Navbar from '../components/NavBar';
+import CartLink from '../components/CartLink';
+import Rating from '../components/Rating';
 
 class ProductDetail extends React.Component {
   render() {
-    console.log(this.props.location.state);
     const { product } = this.props.location.state;
     return (
       <div>
-        <Navbar />
+        <CartLink />
         <h4 data-testid="product-detail-name">{product.title}</h4>
         <ul className="list-unstyled">
           <Media as="li">
@@ -28,6 +28,7 @@ class ProductDetail extends React.Component {
               </p>
             </Media.Body>
           </Media>
+          <Rating />
         </ul>
       </div>
     );

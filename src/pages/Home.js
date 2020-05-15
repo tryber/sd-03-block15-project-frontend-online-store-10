@@ -37,7 +37,6 @@ class Home extends React.Component {
   }
 
   handleCategorySelect(event) {
-    console.log(event);
     api
       .getProductsFromCategoryAndQuery(event)
       .then((data) => this.setState({ apiResults: data.results }));
@@ -65,15 +64,14 @@ class Home extends React.Component {
   render() {
     const { categories, apiResults } = this.state;
     return (
-      <div className="">
-        <nav className="navbar bg-info" id="navbar">
+      <div>
+        <nav className="container container-fluid navbar navbar-default bg-dark">
           <NavBar />
           {this.searchBar()}
+          <CartLink />
         </nav>
         <div className="container">
           {apiResults.length === 0 ? <MessagemInicial /> : <GridProdutos products={apiResults} />}
-
-          <CartLink />
           <BarraEsquerda categorias={categories} handleCategorySelect={this.handleCategorySelect} />
         </div>
       </div>

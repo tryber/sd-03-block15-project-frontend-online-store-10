@@ -1,7 +1,6 @@
 import React from 'react';
 
 const searchBar = () => {
-  console.log(this.props);
   const { query, handleSearchInput, handleSearchSubmit } = this.props;
   return (
     <div>
