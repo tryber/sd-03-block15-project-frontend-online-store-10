@@ -7,9 +7,9 @@ import * as cartActions from '../actions/cart';
 import { connect } from 'react-redux';
 
 class ProductDetail extends React.Component {
-  addNewItem = () => {
+  static addNewItem() {
     this.props.addToCart(this.props.location.state.product);
-  };
+  }
   render() {
     const { product } = this.props.location.state;
     return (

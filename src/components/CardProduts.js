@@ -6,9 +6,9 @@ import * as cartActions from '../actions/cart';
 import { connect } from 'react-redux';
 
 export class CardProduts extends Component {
-  addNewItem = () => {
+  static addNewItem() {
     this.props.addToCart(this.props.product);
-  };
+  }
   render() {
     const { product } = this.props;
     const { id, title, thumbnail, price } = product;
