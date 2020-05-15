@@ -13,5 +13,7 @@ export class Cart extends Component {
     );
   }
 }
-
-export default Cart;
+const mapStateToProps = (state) => ({
+  cart: state.cart,
+});
+export default connect(mapStateToProps)(Cart);
