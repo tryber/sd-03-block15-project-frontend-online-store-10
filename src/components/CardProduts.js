@@ -11,7 +11,7 @@ class CardProduts extends Component {
     this.addNewItem = this.addNewItem.bind(this);
   }
 
-  addNewItem = () => {
+  static addNewItem = () => {
     this.props.addToCart(this.props.product);
   };
   render() {
