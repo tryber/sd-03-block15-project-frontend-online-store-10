@@ -4,3 +4,7 @@ export function addToCart(product) {
     product,
   };
 }
+
+export function removeFromCart(product) {
+  console.log(product);
+}
