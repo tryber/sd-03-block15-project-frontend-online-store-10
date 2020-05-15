@@ -7,6 +7,7 @@ import * as cartActions from '../actions/cart';
 
 export class CardProduts extends Component {
   addNewItem = () => {
+    console.log(this.props.product);
     this.props.addToCart(this.props.product);
   };
   render() {
