@@ -1,8 +1,8 @@
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import MensagemCarrinho from '../components/CartMessage';
 import NavBar from '../components/NavBar';
 import CartUniqueItem from '../components/CartItem';
-import { connect } from 'react-redux';
 
 class Cart extends Component {
   render() {
@@ -17,7 +17,5 @@ class Cart extends Component {
     );
   }
 }
-const mapStateToProps = (state) => ({
-  cart: state.cart,
-});
+const mapStateToProps = (state) => ({ cart: state.cart });
 export default connect(mapStateToProps)(Cart);
