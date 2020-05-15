@@ -5,16 +5,13 @@ import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import * as cartActions from '../actions/cart';
 
-class CardProduts extends Component {
-  constructor() {
-    super();
-    this.addNewItem = this.addNewItem.bind(this);
-  }
-
-  static addNewItem = () => {
+export class CardProduts extends Component {
+  addNewItem = () => {
     this.props.addToCart(this.props.product);
   };
+
   render() {
+    console.log(this.props);
     const { product } = this.props;
     const { id, title, thumbnail, price } = product;
     return (
