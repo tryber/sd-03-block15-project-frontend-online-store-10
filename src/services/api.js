@@ -1,4 +1,5 @@
 export async function getCategories() {
+  //
   // implement here
 }
 
