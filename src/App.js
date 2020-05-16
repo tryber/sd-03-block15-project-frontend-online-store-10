@@ -1,25 +1,24 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Provider } from 'react-redux';
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Cart from './pages/Cart';
-import ProductDetail from './pages/ProductDetail';
-import store from './store/index';
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
-    <div className="">
-      <Provider store={store}>
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/cart" component={Cart} />
-            <Route exact path="/itemdetail" component={ProductDetail} />
-            <Route exact path="/itemdetail/:str" component={ProductDetail} />
-          </Switch>
-        </BrowserRouter>
-      </Provider>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
