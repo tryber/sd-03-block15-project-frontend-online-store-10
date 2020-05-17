@@ -26,19 +26,21 @@ class HomeScreen extends Component {
   }
 
   handleClickCategory(e) {
-    Api.getProductsFromCategoryAndQuery(e)
-      .then((selectCategory) => this.setState({ selectCategory }));
+    Api.getProductsFromCategoryAndQuery(e).then((selectCategory) =>
+      this.setState({ selectCategory })
+    );
   }
 
   handleSearchSubmit() {
     const { selectCategory } = this.state;
-    Api.getProductsFromCategoryAndQuery(selectCategory)
-      .then((data) => this.setState({ products: data.results }));
+    Api.getProductsFromCategoryAndQuery(selectCategory).then((data) =>
+      this.setState({ products: data.results })
+    );
   }
 
   render() {
     const { categories, selectCategory } = this.state;
-    console.log('oi eu sou', categories);
+    console.log('oi eu souq', categories);
     return (
       <div data-testid="home-initial-message">
         <ShopCart />
