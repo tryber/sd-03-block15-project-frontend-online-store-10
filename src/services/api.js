@@ -5,11 +5,11 @@ export const getCategories = async () => {
 };
 
 export const getProductsFromCategoryAndQuery = (categoryId, query) => {
-  if (categoryId) {
+  if (categoryId && !query) {
     return fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${categoryId}`)
       .then((response) => response.json());
   }
-  if (query) {
+  if (query && !categoryId) {
     return fetch(`https://api.mercadolibre.com/sites/MLB/search?category=${query}`)
       .then((response) => response.json());
   }
