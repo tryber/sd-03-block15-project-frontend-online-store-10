@@ -3,10 +3,7 @@ import React, { Component } from 'react';
 class SearchItems extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      query: '',
-    };
-
+    this.state = { query: '' };
     this.handleSearchInput = this.handleSearchInput.bind(this);
   }
 

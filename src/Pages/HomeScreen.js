@@ -57,8 +57,8 @@ class HomeScreen extends Component {
             {products.length === 0 ? (
               <p>Digite algum termo de pesquisa ou escolha uma categoria.</p>
             ) : (
-                <ProductGrid products={products} />
-              )}
+              <ProductGrid products={products} />
+            )}
           </aside>
           <footer>
             <p>Devs</p>
