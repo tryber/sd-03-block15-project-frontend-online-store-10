@@ -31,8 +31,10 @@ class HomeScreen extends Component {
 
   handleSearchSubmit(query) {
     console.log('estou sendo clicakdo');
-    Api.getProductsFromCategoryAndQuery('', query).then((data) => this.setState({products :data.results}));
-    console.log(this.state.products)
+    Api.getProductsFromCategoryAndQuery('', query).then((data) =>
+      this.setState({ products: data.results })
+    );
+    console.log(this.state.products);
   }
 
   render() {
@@ -43,7 +45,11 @@ class HomeScreen extends Component {
         <div data-testid="home-initial-message">
           <aside className="col-sm-10">
             <Category categories={categories} handleButtonPush={this.handleButtonPush} />
-            <ProductGrid products={products} />
+            {this.state.products === 0 ? (
+              'Digite algum termo de pesquisa ou escolha uma categoria.'
+            ) : (
+              <ProductGrid products={products} />
+            )}
           </aside>
           <footer>
             <p>Devs</p>
