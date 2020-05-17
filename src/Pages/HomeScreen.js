@@ -14,7 +14,6 @@ class HomeScreen extends Component {
       query: '',
     };
     this.handleButtonPush = this.handleButtonPush.bind(this);
-    this.handleSearchInput = this.handleSearchInput.bind(this);
     this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
   }
 
@@ -26,19 +25,23 @@ class HomeScreen extends Component {
     this.setState({ selectedCategorie: id });
     console.log(id);
     console.log(this.state);
-    Api.getProductsFromCategoryAndQuery(id, '')
-      .then((data) => this.setState({ products: data.results }));
+    Api.getProductsFromCategoryAndQuery(id, '').then((data) =>
+      this.setState({ products: data.results })
+    );
   }
 
   handleSearchInput(event) {
-    this.setState({ query: event.target.value });
+    this.setState({ query: event });
+    console.log(event);
+    console.log(this.state.query);
   }
 
   handleSearchSubmit() {
     const { query } = this.state;
     console.log('estou sendo clicakdo');
-    Api.getProductsFromCategoryAndQuery('', query)
-      .then((data) => this.setState({ products: data.result }));
+    Api.getProductsFromCategoryAndQuery('', query).then((data) =>
+      this.setState({ products: data.result })
+    );
   }
 
   render() {
@@ -52,13 +55,12 @@ class HomeScreen extends Component {
         />
         <div data-testid="home-initial-message">
           <aside className="col-sm-10">
-            <Category
-              categories={categories}
-              handleButtonPush={this.handleButtonPush}
-            />
+            <Category categories={categories} handleButtonPush={this.handleButtonPush} />
             {products.length === 0 ? (
-              <p>Digite algum termo de pesquisa ou escolha uma categoria.</p>)
-              : (<ProductGrid products={products} />)}
+              <p>Digite algum termo de pesquisa ou escolha uma categoria.</p>
+            ) : (
+              <ProductGrid products={products} />
+            )}
           </aside>
           <footer>
             <p>Devs</p>

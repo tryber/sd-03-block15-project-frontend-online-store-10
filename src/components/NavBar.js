@@ -4,15 +4,13 @@ import SearchItems from './SearchItems';
 
 class NavBar extends Component {
   render() {
+    console.log(this.props);
     const { handleSearchSubmit, handleSearchInput, value } = this.props;
     return (
       <header>
         <nav className="navbar">
           <h1 className="">American Store</h1>
-          <SearchItems
-            onClick={() => handleSearchSubmit(value)}
-            onChange={() => handleSearchInput(value)}
-          />
+          <SearchItems handleSearchInput={handleSearchInput} />
           <ShopCart />
         </nav>
       </header>

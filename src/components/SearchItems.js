@@ -1,41 +1,30 @@
 import React, { Component } from 'react';
-import { InputGroup, Button, FormControl } from 'react-bootstrap';
 
 class SearchItems extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     searchValue: '',
-  //     selectedCategory: '',
-  //   };
-  //   this.handleSearchInput = this.handleSearchInput.bind(this);
-  // }
-  // handleSearchInput(event) {
-  //   this.setState({ searchValue: event.target.value });
-  // }
-
-  // handleSearchSubmit() {
-  //   const { searchValue, selectedCategory } = this.state;
-  //   if (!selectedCategory) {
-  //     Api.getProductsFromCategoryAndQuery(searchValue).then((data) =>
-  //       this.setState({ products: data.result })
-  //     );
-  //   }
-  // }
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      query: '',
+    };
+    this.handleSearchInput = this.handleSearchInput.bind(this);
+  }
+  handleSearchInput(event) {
+    this.setState({ query: event.tatget.value });
+    console.log(this.state.query);
+  }
   render() {
-    // const {  } = this.props;
+    //const { handleSearchInput } = this.props;
+    console.log(this.props);
     return (
-      <InputGroup className="mb-3">
-        <FormControl
-          placeholder="Digite o caminho da imagem"
-          aria-label="Entre com sua busca"
-          aria-describedby="basic-addon2"
-        />
-        <InputGroup.Append>
-          <Button variant="light">Buscar</Button>
-        </InputGroup.Append>
-      </InputGroup>
+      <div>
+        <input
+          onChange={() => this.handleSearchInput}
+          value={this.state.query}
+          type="text"
+          class="form-control"
+          placeholder="Entre com sua busca"
+        ></input>
+      </div>
     );
   }
 }
