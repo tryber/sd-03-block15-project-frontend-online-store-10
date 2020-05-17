@@ -1,6 +1,7 @@
 import React from 'react';
 import CartGrid from '../components/CartGrid';
 import NavBar from '../components/NavBar';
+import InitialCartMessage from '../components/InitialCartMessage';
 
 class CartScreen extends React.Component {
   render() {
@@ -8,7 +9,7 @@ class CartScreen extends React.Component {
     return (
       <div>
         <NavBar />
-        <CartGrid cartItems={cartItems} />
+        {cartItems === 0 ? <InitialCartMessage /> : <CartGrid cartItems={cartItems} />}
       </div>
     );
   }

@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import HomeScreen from './Pages/HomeScreen';
 import ProductDetails from './Pages/ProductDetails';
+import CartScreen from './Pages/CartScreen';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomeScreen} />
         <Route exact path="/details" component={ProductDetails} />
+        <Route exact path="/shoppingcart" component={CartScreen} />
       </Switch>
     </BrowserRouter>
   );
