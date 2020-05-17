@@ -5,9 +5,9 @@ import NavBar from '../components/NavBar';
 import '../App.css';
 
 class ProductDetails extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     const { product } = this.props.location.state;
@@ -19,15 +19,22 @@ class ProductDetails extends React.Component {
           <img
             className="productDetails"
             src={product.thumbnail}
+            alt="foto produto"
           />
         </div>
         <Card className="text-center">
           <h3 data-testid="product-detail-name">{product.title}</h3>
           <p>descrição</p>
-          Bagatela de <p>{product.currency_id} {product.price}</p>
+          Bagatela de
+          <p>{product.currency_id}: {product.price}</p>
         </Card>
         <div>
-          <button type="button">Adicionar ao carrinho</button>
+          <button
+            data-testid="product-add-to-cart"
+            type="button"
+          >
+            Adicionar ao carrinho
+          </button>
         </div>
         <Link to="/">Página inicial</Link>
       </div>

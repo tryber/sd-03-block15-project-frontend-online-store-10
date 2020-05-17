@@ -15,6 +15,6 @@ body {
 .productDetails {
   border: tomato solid;
   height: 100px;
-  width: 100px;
   text-align: center;
+  width: 100px;
 }
