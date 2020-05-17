@@ -23,15 +23,13 @@ class HomeScreen extends Component {
 
   handleButtonPush(id) {
     this.setState({ selectedCategorie: id });
-    Api.getProductsFromCategoryAndQuery(id, '').then((data) =>
-      this.setState({ products: data.results })
-    );
+    Api.getProductsFromCategoryAndQuery(id, '')
+    .then((data) => this.setState({ products: data.results }));
   }
 
   handleSearchSubmit(query) {
-    Api.getProductsFromCategoryAndQuery('', query).then((data) =>
-      this.setState({ products: data.results })
-    );
+    Api.getProductsFromCategoryAndQuery('', query)
+    .then((data) =>this.setState({ products: data.results }));
   }
 
   render() {
