@@ -23,13 +23,15 @@ class HomeScreen extends Component {
 
   handleButtonPush(id) {
     this.setState({ selectedCategorie: id });
-    Api.getProductsFromCategoryAndQuery(id, '')
-    .then((data) => this.setState({ products: data.results }));
+    Api.getProductsFromCategoryAndQuery(id, '').then((data) =>
+      this.setState({ products: data.results })
+    );
   }
 
   handleSearchSubmit(query) {
-    Api.getProductsFromCategoryAndQuery('', query)
-    .then((data) => this.setState({ products: data.results }));
+    Api.getProductsFromCategoryAndQuery('', query).then((data) =>
+      this.setState({ products: data.results })
+    );
   }
 
   render() {
@@ -38,6 +40,7 @@ class HomeScreen extends Component {
     return (
       <div>
         <NavBar handleSearchSubmit={this.handleSearchSubmit} />
+        <InitialMessage />
         <aside className="col-sm-10">
           {this.state.products === 0 ? <InitialMessage /> : <ProductGrid products={products} />}
           <Category categories={categories} handleButtonPush={this.handleButtonPush} />
