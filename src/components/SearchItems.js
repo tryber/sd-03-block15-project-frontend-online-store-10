@@ -10,9 +10,10 @@ class SearchItems extends Component {
     console.log(e.target);
     this.setState({ value: e.target.value });
   }
+
   render() {
-    console.log(this.props, 'searchItems');
     const { handleSearchSubmit } = this.props;
+
     return (
       <div>
         <input
