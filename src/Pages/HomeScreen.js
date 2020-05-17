@@ -29,7 +29,7 @@ class HomeScreen extends Component {
 
   handleSearchSubmit(query) {
     Api.getProductsFromCategoryAndQuery('', query)
-    .then((data) =>this.setState({ products: data.results }));
+    .then((data) => this.setState({ products: data.results }));
   }
 
   render() {
