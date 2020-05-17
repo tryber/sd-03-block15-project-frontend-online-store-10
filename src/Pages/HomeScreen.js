@@ -46,7 +46,7 @@ class HomeScreen extends Component {
             <ProductGrid products={products} />
           </aside>
           <footer>
-            <p>Devs</p>
+            <p>Devss</p>
           </footer>
         </div>
       </div>
