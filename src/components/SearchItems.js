@@ -25,10 +25,11 @@ class SearchItems extends Component {
           placeholder="Entre com sua busca"
         />
         <button
-         data-testid="query-button" 
-         type="button" onClick={() => 
-         handleSearchSubmit(this.state.value)} 
-         className="btn">
+          data-testid="query-button"
+          type="button"
+          onClick={() => handleSearchSubmit(this.state.value)}
+          className="btn"
+        >
           Save
         </button>
       </div>
