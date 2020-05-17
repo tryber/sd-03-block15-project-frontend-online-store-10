@@ -6,3 +6,8 @@ body {
   background-color:#e60014;
   color: white;
 }
+
+.mesmo-tamanho {
+  width: 13%;
+  white-space: normal;
+}

@@ -10,9 +10,10 @@ class ShopCart extends Component {
       <div>
         <NavBar />
         <h1 data-testid="shopping-cart-empty-message">Seu carrinho está vazio</h1>
-        <Link to='/shoppingCart'>
+        <Link
+          data-testid="shopping-cart-button"
+          to='/shoppingCart'>
           <ShoppingCartIcon />
-          <button data-testid="shopping-cart-button" />
         </Link>
       </div>
     );

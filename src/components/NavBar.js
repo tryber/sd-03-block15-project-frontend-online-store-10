@@ -5,7 +5,7 @@ class NavBar extends Component {
     return (
       <header>
         <nav className="navbar">
-          <h1 className="">Rhian Store</h1>
+          <h1 className="">American Store</h1>
         </nav>
       </header>
     );

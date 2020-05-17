@@ -6,11 +6,16 @@ class Category extends Component {
 
     return categories.map(({ id, name }) => (
       <div
+        className=""
         data-testid="category"
         key={id}
       >
-        {/* // onClick={this.handleClickCategory} */}
-        <button type="button">{name}</button>
+        <button
+          className="btn btn-outline-primary mesmo-tamanho"
+          type="button"
+        >
+          {name}
+        </button>
       </div>
     ));
   }
