@@ -9,6 +9,10 @@ class ProductDetails extends React.Component {
   //   super(props);
   // }
 
+  addItem() {
+
+  }
+
   render() {
     const { product } = this.props.location.state;
     return (
@@ -30,7 +34,7 @@ class ProductDetails extends React.Component {
         </Card>
         <div>
           <button
-            data-testid="product-add-to-cart"
+            data-testid="product-detail-add-to-cart"
             type="button"
           >
             Adicionar ao carrinho
