@@ -11,3 +11,10 @@ body {
   background-color: #e60014;
   color: white;
 }
+
+.productDetails {
+  border: tomato solid;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+}

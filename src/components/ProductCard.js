@@ -1,11 +1,13 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class ProductCard extends React.Component {
   render() {
-    const { product } = this.props;
+    const { product, id } = this.props;
     return (
       <div>
+        {/* <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p> */}
         <Card className="mt-5" style={{ width: '18rem' }}>
           <Card.Img variant="top" src={product.thumbnail} />
           <Card.Body>
@@ -13,7 +15,13 @@ class ProductCard extends React.Component {
             <Card.Text>
               {product.currency_id} {product.price}
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">Adicionar ao carrinho</Button>
+            <Link
+              to={{ pathname: `/details/${id}`, state: { product } }}
+              data-testid="product-detail-link"
+            >
+              Ver Detalhes
+            </Link>
           </Card.Body>
         </Card>
       </div>
