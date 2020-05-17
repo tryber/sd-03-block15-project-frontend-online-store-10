@@ -1,26 +1,29 @@
 import React, { Component } from 'react';
 
 class SearchItems extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { query: '' };
+    this.handleSearchInput = this.handleSearchInput.bind(this);
+  }
+
+  handleSearchInput(event) {
+    this.setState({ query: event.tatget.value });
+    console.log(this.state.query);
+  }
+
   render() {
-    const { selectCategory, handleSearchInput } = this.props;
-    console.log(this);
+    // const { handleSearchInput } = this.props;
+    console.log(this.props);
     return (
-      <div className="text-center">
+      <div>
         <input
-          className=""
-          data-testid="query-input"
-          placeholder="Insira sua pesquisa"
+          onChange={() => this.handleSearchInput}
+          value={this.state.query}
           type="text"
-          onChange={handleSearchInput}
-          value={selectCategory}
+          className="form-control"
+          placeholder="Entre com sua busca"
         />
-        <button
-          onClick={this.handleSearchSubmit}
-          data-testid="query-button"
-          type="button"
-        >
-          Pesquisar
-        </button>
       </div>
     );
   }
