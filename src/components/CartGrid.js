@@ -8,7 +8,11 @@ class CartGrid extends React.Component {
     const { cartItems } = this.props;
     return (
       <CardDeck>
-        {cartItems === undefined ? <InitialCartMessage/ > : cartItems.map((product) => <CartItemCard product={product}/> )}
+        {cartItems === undefined ? (
+          <InitialCartMessage />
+        ) : (
+          cartItems.map((product) => <CartItemCard product={product} />)
+        )}
       </CardDeck>
     );
   }
