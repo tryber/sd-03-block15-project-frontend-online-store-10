@@ -24,7 +24,11 @@ class SearchItems extends Component {
           data-testid="query-input"
           placeholder="Entre com sua busca"
         />
-        <button data-testid="query-button" type="button" onClick={() => handleSearchSubmit(this.state.value)} className="btn">
+        <button
+         data-testid="query-button" 
+         type="button" onClick={() => 
+         handleSearchSubmit(this.state.value)} 
+         className="btn">
           Save
         </button>
       </div>
