@@ -1,15 +1,14 @@
 import React from 'react';
 import { CardDeck } from 'react-bootstrap';
-import CartItemCard from './ProductCard';
+import CartItemCard from './CartItemCard';
+import InitialCartMessage from './InitialCartMessage';
 
 class CartGrid extends React.Component {
   render() {
     const { cartItems } = this.props;
     return (
       <CardDeck>
-        {cartItems.map((product) => (
-          <CartItemCard key={product.id} product={product} />
-        ))}
+        {cartItems === undefined ? <InitialCartMessage/ > : cartItems.map((product) => <CartItemCard product={product}/> )}
       </CardDeck>
     );
   }
