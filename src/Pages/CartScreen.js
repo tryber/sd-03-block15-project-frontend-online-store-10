@@ -1,6 +1,7 @@
 import React from 'react';
 import CartGrid from '../components/CartGrid';
 import NavBar from '../components/NavBar';
+import InitialCartMessage from '../components/InitialCartMessage';
 
 class CartScreen extends React.Component {
   render() {
@@ -10,6 +11,7 @@ class CartScreen extends React.Component {
         <NavBar />
         <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
         <CartGrid cartItems={cartItems} />
+        {cartItems === 0 ? <InitialCartMessage /> : <CartGrid cartItems={cartItems} />}
       </div>
     );
   }

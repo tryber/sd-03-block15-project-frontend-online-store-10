@@ -11,9 +11,9 @@ class CartItemCard extends React.Component {
           <Card.Body>
             <Card.Title>{`${product.title.slice(0, 15)}`}</Card.Title>
             <Card.Text>
-              {product.currency_id} {product.price}
+              {product.currency_id} {product.price} {product.id}
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">Adicionar ao carrinho</Button>
           </Card.Body>
         </Card>
       </div>

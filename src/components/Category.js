@@ -4,8 +4,9 @@ class Category extends Component {
   render() {
     const { categories, handleButtonPush } = this.props;
     return categories.map(({ id, name }) => (
-      <div className="" data-testid="category" key={id}>
+      <div className="" key={id}>
         <button
+          data-testid="category"
           onClick={() => handleButtonPush(id)}
           className="btn btn-outline-primary mesmo-tamanho"
           type="button"

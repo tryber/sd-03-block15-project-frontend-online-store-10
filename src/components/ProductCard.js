@@ -9,6 +9,7 @@ class ProductCard extends React.Component {
       <div>
         {/* <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p> */}
         <Card className="mt-5" style={{ width: '18rem' }}>
+        <Card className="mt-5" data-testid="product" style={{ width: '18rem' }}>
           <Card.Img variant="top" src={product.thumbnail} />
           <Card.Body>
             <Card.Title>{`${product.title.slice(0, 15)}`}</Card.Title>
