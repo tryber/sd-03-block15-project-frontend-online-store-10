@@ -9,10 +9,6 @@ class ProductDetails extends React.Component {
   //   super(props);
   // }
 
-  addItem() {
-
-  }
-
   render() {
     const { product } = this.props.location.state;
     return (

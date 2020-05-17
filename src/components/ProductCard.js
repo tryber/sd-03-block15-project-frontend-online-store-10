@@ -17,7 +17,10 @@ class ProductCard extends React.Component {
             </Card.Text>
             <Button
               data-testid="product-add-to-cart"
-              variant="primary">Adicionar ao carrinho</Button>
+              variant="primary"
+            >
+              Adicionar ao carrinho
+            </Button>
             <Link
               to={{ pathname: `/details/${id}`, state: { product } }}
               data-testid="product-detail-link"
