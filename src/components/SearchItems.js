@@ -3,27 +3,28 @@ import React, { Component } from 'react';
 class SearchItems extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      query: '',
-    };
-    this.handleSearchInput = this.handleSearchInput.bind(this);
+    this.state = { value: '' };
+    this.handleChangeValue = this.handleChangeValue.bind(this);
   }
-  handleSearchInput(event) {
-    this.setState({ query: event.tatget.value });
-    console.log(this.state.query);
+  handleChangeValue(e) {
+    console.log(e.target);
+    this.setState({ value: e.target.value });
   }
   render() {
-    //const { handleSearchInput } = this.props;
-    console.log(this.props);
+    console.log(this.props, 'searchItems');
+    const { handleSearchSubmit } = this.props;
     return (
       <div>
         <input
-          onChange={() => this.handleSearchInput}
-          value={this.state.query}
+          onChange={(e) => this.handleChangeValue(e)}
+          value={this.state.value}
           type="text"
-          class="form-control"
+          className="form-control"
           placeholder="Entre com sua busca"
         ></input>
+        <button type="button" onClick={() => handleSearchSubmit(this.state.value)} className="btn">
+          Save
+        </button>
       </div>
     );
   }
