@@ -6,7 +6,7 @@ class ProductCard extends React.Component {
     const { product } = this.props;
     return (
       <div>
-        <Card className="mt-5" style={{ width: '18rem' }}>
+        <Card className="mt-5" data-testid="product" style={{ width: '18rem' }}>
           <Card.Img variant="top" src={product.thumbnail} />
           <Card.Body>
             <Card.Title>{`${product.title.slice(0, 15)}`}</Card.Title>
