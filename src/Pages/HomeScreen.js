@@ -3,6 +3,7 @@ import * as Api from '../services/api';
 import Category from '../components/Category';
 import NavBar from '../components/NavBar';
 import ProductGrid from '../components/ProductGrid';
+import InitialMessage from '../components/InitialMessage';
 
 class HomeScreen extends Component {
   constructor(props) {
@@ -33,22 +34,15 @@ class HomeScreen extends Component {
 
   render() {
     const { categories, products } = this.state;
+    console.log(this.state.products.length)
     return (
       <div>
         <NavBar handleSearchSubmit={this.handleSearchSubmit} />
-        <div data-testid="home-initial-message">
           <aside className="col-sm-10">
+            {this.state.products == 0 ? <InitialMessage /> : <ProductGrid products={products} />}
             <Category categories={categories} handleButtonPush={this.handleButtonPush} />
-            {this.state.products === 0 ? (
-              'Digite algum termo de pesquisa ou escolha uma categoria.'
-            ) : (
-              <ProductGrid products={products} />
-            )}
           </aside>
-          <footer>
-            <p>Devs</p>
-          </footer>
-        </div>
+          <footer></footer>
       </div>
     );
   }
