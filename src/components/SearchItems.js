@@ -6,14 +6,17 @@ class SearchItems extends Component {
     this.state = {
       query: '',
     };
+
     this.handleSearchInput = this.handleSearchInput.bind(this);
   }
+
   handleSearchInput(event) {
     this.setState({ query: event.tatget.value });
     console.log(this.state.query);
   }
+
   render() {
-    //const { handleSearchInput } = this.props;
+    // const { handleSearchInput } = this.props;
     console.log(this.props);
     return (
       <div>
@@ -21,9 +24,9 @@ class SearchItems extends Component {
           onChange={() => this.handleSearchInput}
           value={this.state.query}
           type="text"
-          class="form-control"
+          className="form-control"
           placeholder="Entre com sua busca"
-        ></input>
+        />
       </div>
     );
   }

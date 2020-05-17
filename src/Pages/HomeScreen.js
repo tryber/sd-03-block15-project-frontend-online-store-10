@@ -25,9 +25,8 @@ class HomeScreen extends Component {
     this.setState({ selectedCategorie: id });
     console.log(id);
     console.log(this.state);
-    Api.getProductsFromCategoryAndQuery(id, '').then((data) =>
-      this.setState({ products: data.results })
-    );
+    Api.getProductsFromCategoryAndQuery(id, '')
+      .then((data) => this.setState({ products: data.results }));
   }
 
   handleSearchInput(event) {
@@ -39,9 +38,8 @@ class HomeScreen extends Component {
   handleSearchSubmit() {
     const { query } = this.state;
     console.log('estou sendo clicakdo');
-    Api.getProductsFromCategoryAndQuery('', query).then((data) =>
-      this.setState({ products: data.result })
-    );
+    Api.getProductsFromCategoryAndQuery('', query)
+      .then((data) => this.setState({ products: data.result }));
   }
 
   render() {
@@ -59,8 +57,8 @@ class HomeScreen extends Component {
             {products.length === 0 ? (
               <p>Digite algum termo de pesquisa ou escolha uma categoria.</p>
             ) : (
-              <ProductGrid products={products} />
-            )}
+                <ProductGrid products={products} />
+              )}
           </aside>
           <footer>
             <p>Devs</p>
