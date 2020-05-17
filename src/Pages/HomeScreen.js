@@ -11,8 +11,11 @@ class HomeScreen extends Component {
       categories: [],
       products: [],
       selectedCategory: '',
+      query: '',
     };
     this.handleButtonPush = this.handleButtonPush.bind(this);
+    this.handleSearchInput = this.handleSearchInput.bind(this);
+    this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -23,24 +26,39 @@ class HomeScreen extends Component {
     this.setState({ selectedCategorie: id });
     console.log(id);
     console.log(this.state);
-    Api.getProductsFromCategoryAndQuery(id, '').then((data) =>
-      this.setState({ products: data.results })
-    );
+    Api.getProductsFromCategoryAndQuery(id, '')
+      .then((data) => this.setState({ products: data.results }));
+  }
+
+  handleSearchInput(event) {
+    this.setState({ query: event.target.value });
+  }
+
+  handleSearchSubmit() {
+    const { query } = this.state;
+    console.log('estou sendo clicakdo');
+    Api.getProductsFromCategoryAndQuery('', query)
+      .then((data) => this.setState({ products: data.result }));
   }
 
   render() {
-    const { categories } = this.state;
+    const { categories, query, products } = this.state;
     return (
       <div>
-        <NavBar />
+        <NavBar
+          value={query}
+          handleSearchInput={this.handleSearchInput}
+          handleSearchSubmit={this.handleSearchSubmit}
+        />
         <div data-testid="home-initial-message">
           <aside className="col-sm-10">
-            <Category categories={categories} handleButtonPush={this.handleButtonPush} />
-            {this.state.products.length === 0 ? (
-              <p>Digite algum termo de pesquisa ou escolha uma categoria.</p>
-            ) : (
-              <ProductGrid products={this.state.products} />
-            )}
+            <Category
+              categories={categories}
+              handleButtonPush={this.handleButtonPush}
+            />
+            {products.length === 0 ? (
+              <p>Digite algum termo de pesquisa ou escolha uma categoria.</p>)
+              : (<ProductGrid products={products} />)}
           </aside>
           <footer>
             <p>Devs</p>
