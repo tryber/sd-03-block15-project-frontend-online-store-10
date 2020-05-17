@@ -4,8 +4,8 @@ import SearchItems from './SearchItems';
 
 class NavBar extends Component {
   render() {
-    console.log(this.props);
     const { handleSearchSubmit } = this.props;
+
     return (
       <header>
         <nav className="navbar">

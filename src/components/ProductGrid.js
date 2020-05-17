@@ -1,6 +1,6 @@
 import React from 'react';
-import ProductCard from './ProductCard';
 import { CardDeck } from 'react-bootstrap';
+import ProductCard from './ProductCard';
 
 class ProductGrid extends React.Component {
   render() {
