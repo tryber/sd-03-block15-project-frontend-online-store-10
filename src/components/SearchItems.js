@@ -22,7 +22,7 @@ class SearchItems extends Component {
           type="text"
           className="form-control"
           placeholder="Entre com sua busca"
-        ></input>
+        />
         <button type="button" onClick={() => handleSearchSubmit(this.state.value)} className="btn">
           Save
         </button>
