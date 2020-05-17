@@ -9,9 +9,9 @@ class ShopCart extends Component {
     return (
       <div>
         <NavBar />
-        <h1 data-testid="shopping-cart-empty-message">Seu carrinho está vazio</h1>
+        <h1 data-testid='shopping-cart-empty-message'>Seu carrinho está vazio</h1>
         <Link
-          data-testid="shopping-cart-button"
+          data-testid='shopping-cart-button'
           to='/shoppingCart'>
           <ShoppingCartIcon />
         </Link>

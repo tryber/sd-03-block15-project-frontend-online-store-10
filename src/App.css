@@ -2,12 +2,12 @@ body {
   background-color: rgb(234, 234, 234);
 }
 
-.navbar {
-  background-color:#e60014;
-  color: white;
+.mesmo-tamanho {
+  white-space: normal;
+  width: 13%;
 }
 
-.mesmo-tamanho {
-  width: 13%;
-  white-space: normal;
+.navbar {
+  background-color: #e60014;
+  color: white;
 }
