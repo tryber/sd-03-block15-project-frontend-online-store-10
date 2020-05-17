@@ -10,43 +10,37 @@ class HomeScreen extends Component {
     this.state = {
       categories: [],
       products: [],
-      selectCategory: '',
+      selectedCategory: '',
     };
-    this.handleClickCategory = this.handleClickCategory.bind(this);
-    this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
+    this.handleButtonPush = this.handleButtonPush.bind(this);
   }
 
   componentDidMount() {
     Api.getCategories().then((categories) => this.setState({ categories }));
   }
 
-  handleClickCategory(e) {
-    Api.getProductsFromCategoryAndQuery(e).then((selectCategory) =>
-      this.setState({ selectCategory })
-    );
-  }
-
-  handleSearchSubmit(e) {
-    const { selectCategory } = this.state;
-    console.log('clickado');
-    Api.getProductsFromCategoryAndQuery(e).then((data) =>
+  handleButtonPush(id) {
+    this.setState({ selectedCategorie: id });
+    console.log(id);
+    console.log(this.state);
+    Api.getProductsFromCategoryAndQuery(id, '').then((data) =>
       this.setState({ products: data.results })
     );
   }
 
   render() {
-    const { categories, selectCategory } = this.state;
+    const { categories } = this.state;
     return (
       <div>
-        <NavBar handleSearchSubmit={this.handleSearchSubmit} />
+        <NavBar />
         <div data-testid="home-initial-message">
           <aside className="col-sm-10">
+            <Category categories={categories} handleButtonPush={this.handleButtonPush} />
             {this.state.products.length === 0 ? (
               <p>Digite algum termo de pesquisa ou escolha uma categoria.</p>
             ) : (
-              <ProductGrid />
+              <ProductGrid products={this.state.products} />
             )}
-            <Category categories={categories} />
           </aside>
           <footer>
             <p>Devs</p>

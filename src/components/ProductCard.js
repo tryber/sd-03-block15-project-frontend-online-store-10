@@ -6,10 +6,10 @@ class ProductCard extends React.Component {
     const { product } = this.props;
     return (
       <div>
-        <Card style={{ width: '18rem' }}>
+        <Card className="mt-5" style={{ width: '18rem' }}>
           <Card.Img variant="top" src={product.thumbnail} />
           <Card.Body>
-            <Card.Title>{product.title}</Card.Title>
+            <Card.Title>{`${product.title.slice(0, 15)}`}</Card.Title>
             <Card.Text>
               {product.currency_id} {product.price}
             </Card.Text>

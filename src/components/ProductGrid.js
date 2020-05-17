@@ -4,12 +4,11 @@ import { CardDeck } from 'react-bootstrap';
 
 class ProductGrid extends React.Component {
   render() {
-    console.log(this.props);
     const { products } = this.props;
     return (
       <CardDeck>
         {products.map((product) => (
-          <ProductCard product={product} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </CardDeck>
     );
