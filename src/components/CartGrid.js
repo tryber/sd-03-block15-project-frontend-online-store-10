@@ -6,9 +6,7 @@ import InitialCartMessage from './InitialCartMessage';
 class CartGrid extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      cartLength: this.props.cart.length,
-    };
+    this.state = { cartLength: this.props.cart.length };
   }
   render() {
     const { cart } = this.props;
