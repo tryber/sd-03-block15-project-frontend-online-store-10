@@ -20,17 +20,17 @@ class SearchItems extends Component {
           onChange={(e) => this.handleChangeValue(e)}
           value={this.state.value}
           type="text"
-          className="form-control"
+          className="inputTamanho"
           data-testid="query-input"
           placeholder="Entre com sua busca"
         />
         <button
+          className="buttonInput"
           data-testid="query-button"
           type="button"
           onClick={() => handleSearchSubmit(this.state.value)}
-          className="btn"
         >
-          Save
+          Pesquisar
         </button>
       </div>
     );

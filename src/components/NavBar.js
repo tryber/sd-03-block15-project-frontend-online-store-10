@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import ShopCart from './ShopCart';
 import SearchItems from './SearchItems';
 
@@ -9,7 +10,9 @@ class NavBar extends Component {
     return (
       <header>
         <nav className="navbar">
-          <h1 className="">American Store</h1>
+          <Link style={{ textDecoration: 'none', color: 'white' }} to="/">
+            <h1 className="">American Store</h1>
+          </Link>
           <SearchItems handleSearchSubmit={handleSearchSubmit} />
           <ShopCart />
         </nav>

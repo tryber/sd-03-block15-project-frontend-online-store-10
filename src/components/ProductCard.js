@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 class ProductCard extends React.Component {
   render() {
-    const { product, id } = this.props;
+    const { product } = this.props;
     return (
       <div>
         <Card className="mt-5" data-testid="product" style={{ width: '18rem' }}>
@@ -20,10 +20,15 @@ class ProductCard extends React.Component {
               Adicionar
             </Button>
             <Link
-              to={{ pathname: `/details/${id}`, state: { product } }}
+              to={{ pathname: `/details/${product.id}`, state: { product } }}
               data-testid="product-detail-link"
             >
-              Ver detalhes
+              <Button
+                className="spaceButton"
+                style={{ backgroundColor: 'red', border: 'red' }}
+              >
+                Ver detalhes
+              </Button>
             </Link>
           </Card.Body>
         </Card>

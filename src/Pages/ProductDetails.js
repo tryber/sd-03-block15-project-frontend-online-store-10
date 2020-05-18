@@ -14,7 +14,7 @@ class ProductDetails extends React.Component {
     return (
       <div>
         <NavBar />
-        <h2 className="text-center">Detalhes do produto </h2>
+        <h2 className="">Detalhes do produto </h2>
         <div>
           <img
             className="productDetails"
@@ -36,7 +36,7 @@ class ProductDetails extends React.Component {
             Adicionar ao carrinho
           </button>
         </div>
-        <Link to="/">Página inicial</Link>
+        <Link to="/" style={{ textDecoration: 'none' }}>Página inicial</Link>
       </div>
     );
   }
