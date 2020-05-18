@@ -6,6 +6,7 @@ class SearchItems extends Component {
     this.state = { value: '' };
     this.handleChangeValue = this.handleChangeValue.bind(this);
   }
+
   handleChangeValue(e) {
     console.log(e.target);
     this.setState({ value: e.target.value });

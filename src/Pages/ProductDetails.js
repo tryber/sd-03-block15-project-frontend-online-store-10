@@ -20,7 +20,6 @@ class ProductDetails extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { product } = this.props.location.state;
     return (
       <div className="text-center">
@@ -71,6 +70,7 @@ class ProductDetails extends React.Component {
     );
   }
 }
+
 const mapStateToProps = (state) => ({ cart: state.cart });
 const mapDispatchToProps = (dispatch) => bindActionCreators(cartActions, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(ProductDetails);
