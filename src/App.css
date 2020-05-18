@@ -5,7 +5,7 @@ body {
 .buttonInput {
   background-color: white;
   border: white solid;
-  border-radius: 5px 5px;
+  border-radius: 5px;
 }
 
 .colorTitle {
@@ -18,7 +18,7 @@ body {
 
 .inputTamanho {
   border: white solid;
-  border-radius: 6px 6px;
+  border-radius: 6px;
   margin-left: -100px;
   margin-right: -9px;
   width: 800px;
@@ -36,9 +36,7 @@ body {
 
 .productDetails {
   border: tomato solid;
-  height: 100px;
-  text-align: center;
-  width: 100px;
+  margin: 50px;
 }
 
 .spaceButton {
