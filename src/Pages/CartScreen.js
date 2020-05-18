@@ -9,6 +9,8 @@ class CartScreen extends React.Component {
     return (
       <div>
         <NavBar />
+        <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
+        <CartGrid cartItems={cartItems} />
         {cartItems === 0 ? <InitialCartMessage /> : <CartGrid cartItems={cartItems} />}
       </div>
     );

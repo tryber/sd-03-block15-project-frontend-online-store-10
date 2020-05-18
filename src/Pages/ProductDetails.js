@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import NavBar from '../components/NavBar';
+import '../App.css';
 
 class ProductDetails extends React.Component {
   // constructor(props) {
@@ -9,18 +10,31 @@ class ProductDetails extends React.Component {
   // }
 
   render() {
+    const { product } = this.props.location.state;
     return (
       <div>
         <NavBar />
-        <h2>Detalhes do produto </h2>
-        <Card className="">
-          <h3 data-testid="product-detail-name">nome do produto</h3>
-          {/* <img /> */}
+        <h2 className="text-center">Detalhes do produto </h2>
+        <div>
+          <img
+            className="productDetails"
+            src={product.thumbnail}
+            alt="foto produto"
+          />
+        </div>
+        <Card className="text-center">
+          <h3 data-testid="product-detail-name">{product.title}</h3>
           <p>descrição</p>
-          <p>preço</p>
+          Bagatela de
+          <p>{product.currency_id}: {product.price}</p>
         </Card>
         <div>
-          <button type="button">Adicionar ao carrinho</button>
+          <button
+            data-testid="product-detail-add-to-cart"
+            type="button"
+          >
+            Adicionar ao carrinho
+          </button>
         </div>
         <Link to="/">Página inicial</Link>
       </div>
