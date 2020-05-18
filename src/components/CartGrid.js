@@ -4,14 +4,22 @@ import CartItemCard from './CartItemCard';
 import InitialCartMessage from './InitialCartMessage';
 
 class CartGrid extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cartLength : this.props.cart.length
+    }
+  }
   render() {
-    const { cartItems } = this.props;
+    const { cart } = this.props;
+    console.log(this.state.cartLength)
+    
     return (
       <CardDeck>
-        {cartItems === undefined ? (
+        {cart.length === 0 ? (
           <InitialCartMessage />
         ) : (
-          cartItems.map((product) => <CartItemCard product={product} />)
+          cart.map((product) => <CartItemCard key={product.id} product={product} />)
         )}
       </CardDeck>
     );
