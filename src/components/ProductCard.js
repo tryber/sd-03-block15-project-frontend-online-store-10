@@ -27,7 +27,7 @@ class ProductCard extends React.Component {
             </Card.Text>
             <Button
               variant="primary"
-              data-testid="product-detail-add-to-cart"
+              data-testid="product-add-to-cart"
               type="button"
               onClick={() => this.addNewItem(product)}
             >
