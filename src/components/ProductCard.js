@@ -1,9 +1,19 @@
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import * as cartActions from '../actions/cart';
 
 class ProductCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.addNewItem = this.addNewItem.bind(this);
+  }
+
+  addNewItem(product) {
+    this.props.addToCart(product);
+  }
   render() {
     const { product } = this.props;
     return (
@@ -17,6 +27,9 @@ class ProductCard extends React.Component {
             </Card.Text>
             <Button
               variant="primary"
+              data-testid="product-detail-add-to-cart"
+              type="button"
+              onClick={() => this.addNewItem(product)}
             >
               Adicionar
             </Button>
@@ -33,4 +46,6 @@ class ProductCard extends React.Component {
   }
 }
 
-export default ProductCard;
+const mapStateToProps = (state) => ({ cart: state.cart });
+const mapDispatchToProps = (dispatch) => bindActionCreators(cartActions, dispatch);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductCard);
