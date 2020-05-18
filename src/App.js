@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Provider } from 'react-redux';
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -6,10 +8,12 @@ import HomeScreen from './Pages/HomeScreen';
 import ProductDetails from './Pages/ProductDetails';
 import ProductCard from './components/ProductCard';
 import CartScreen from './Pages/CartScreen';
+import store from './store/index';
 
 
 function App() {
   return (
+  <Provider store={store}>
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={HomeScreen} />
@@ -19,6 +23,7 @@ function App() {
         <Route exact path="/shoppingcart" component={CartScreen} />
       </Switch>
     </BrowserRouter>
+   </Provider>
   );
 }
 
