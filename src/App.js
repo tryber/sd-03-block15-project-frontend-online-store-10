@@ -13,17 +13,17 @@ import store from './store/index';
 
 function App() {
   return (
-  <Provider store={store}>
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={HomeScreen} />
-        <Route exact path="/details/:id" component={ProductDetails} />
-        <Route exact path="/shopcart" component={ProductCard} />
-        <Route exact path="/details" component={ProductDetails} />
-        <Route exact path="/shoppingcart" component={CartScreen} />
-      </Switch>
-    </BrowserRouter>
-   </Provider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={HomeScreen} />
+          <Route exact path="/details/:id" component={ProductDetails} />
+          <Route exact path="/shopcart" component={ProductCard} />
+          <Route exact path="/details" component={ProductDetails} />
+          <Route exact path="/shoppingcart" component={CartScreen} />
+        </Switch>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
