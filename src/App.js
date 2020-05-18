@@ -17,7 +17,6 @@ function App() {
         <Route exact path="/shopcart" component={ProductCard} />
         <Route exact path="/details" component={ProductDetails} />
         <Route exact path="/shoppingcart" component={CartScreen} />
-
       </Switch>
     </BrowserRouter>
   );
