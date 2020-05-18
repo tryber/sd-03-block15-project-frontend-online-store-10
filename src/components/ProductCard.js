@@ -14,6 +14,7 @@ class ProductCard extends React.Component {
   addNewItem(product) {
     this.props.addToCart(product);
   }
+
   render() {
     const { product } = this.props;
     return (
@@ -22,13 +23,10 @@ class ProductCard extends React.Component {
           <Card.Img variant="top" src={product.thumbnail} />
           <Card.Body>
             <Card.Title>{`${product.title.slice(0, 15)}`}</Card.Title>
-            <Card.Text>
-              {product.currency_id} {product.price}
-            </Card.Text>
+            <Card.Text>{product.price}</Card.Text>
             <Button
               variant="primary"
               data-testid="product-add-to-cart"
-              type="button"
               onClick={() => this.addNewItem(product)}
             >
               Adicionar
@@ -37,7 +35,9 @@ class ProductCard extends React.Component {
               to={{ pathname: `/details/${product.id}`, state: { product } }}
               data-testid="product-detail-link"
             >
-              Ver detalhes
+              <Button>
+                Ver detalhes
+              </Button>
             </Link>
           </Card.Body>
         </Card>
@@ -49,3 +49,6 @@ class ProductCard extends React.Component {
 const mapStateToProps = (state) => ({ cart: state.cart });
 const mapDispatchToProps = (dispatch) => bindActionCreators(cartActions, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(ProductCard);
+
+// className="spaceButton"
+// style={{ backgroundColor: 'red', border: 'red' }}

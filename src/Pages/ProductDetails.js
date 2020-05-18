@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import NavBar from '../components/NavBar';
 import Rating from '../components/Rating';
@@ -19,10 +20,9 @@ class ProductDetails extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { product } = this.props.location.state;
     return (
-      <div>
+      <div className="text-center">
         <NavBar />
         <h2 className="text-center">Detalhes do produto </h2>
         <div>
@@ -37,16 +37,17 @@ class ProductDetails extends React.Component {
           </p>
         </Card>
         <div>
-          <button data-testid="product-detail-add-to-cart" type="button" onClick={this.addNewItem}>
+          <Button data-testid="product-detail-add-to-cart" type="button" onClick={this.addNewItem}>
             Adicionar ao carrinho
-          </button>
+          </Button>
           <Rating />
         </div>
-        <Link to="/">Página inicial</Link>
+        <Link to="/" style={{ textDecoration: 'none' }}>Página inicial</Link>
       </div>
     );
   }
 }
+
 const mapStateToProps = (state) => ({ cart: state.cart });
 const mapDispatchToProps = (dispatch) => bindActionCreators(cartActions, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(ProductDetails);

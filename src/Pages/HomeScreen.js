@@ -39,7 +39,7 @@ class HomeScreen extends Component {
       <div>
         <NavBar handleSearchSubmit={this.handleSearchSubmit} />
         <InitialMessage />
-        <aside className="col-sm-10">
+        <aside className="col-sm-10 container">
           {this.state.products === 0 ? <InitialMessage /> : <ProductGrid products={products} />}
           <Category categories={categories} handleButtonPush={this.handleButtonPush} />
         </aside>

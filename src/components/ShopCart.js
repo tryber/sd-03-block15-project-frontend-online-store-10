@@ -5,7 +5,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 class ShopCart extends Component {
   render() {
     return (
-      <div>
+      <div className="iconCart">
         <Link data-testid="shopping-cart-button" to="/shoppingCart">
           <ShoppingCartIcon />
         </Link>
