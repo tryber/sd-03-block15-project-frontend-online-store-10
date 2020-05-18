@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import NavBar from '../components/NavBar';
 import Rating from '../components/Rating';
-import * as cartActions from '../actions/cart'
+import * as cartActions from '../actions/cart';
 import '../App.css';
 
 class ProductDetails extends React.Component {
@@ -19,7 +19,6 @@ class ProductDetails extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     const { product } = this.props.location.state;
     return (
       <div>

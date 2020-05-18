@@ -7,7 +7,7 @@ import HomeScreen from './Pages/HomeScreen';
 import ProductDetails from './Pages/ProductDetails';
 import ProductCard from './components/ProductCard';
 import CartScreen from './Pages/CartScreen';
-import store from './store'
+import store from './store';
 
 
 function App() {

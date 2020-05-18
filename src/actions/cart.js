@@ -8,5 +8,6 @@ export function addToCart(product) {
 export function removeFromCart(product) {
   return {
     type: 'REMOVE_FROM_CART',
+    product,
   };
 }
