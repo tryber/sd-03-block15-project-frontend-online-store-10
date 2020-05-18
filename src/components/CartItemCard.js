@@ -3,7 +3,6 @@ import { Card } from 'react-bootstrap';
 
 class CartItemCard extends React.Component {
   render() {
-    console.log(this.props)
     const { product } = this.props.product;
     return (
       <div>
@@ -13,6 +12,7 @@ class CartItemCard extends React.Component {
             <Card.Title data-testid="shopping-cart-product-name">{`${product.title}`} </Card.Title>
             <Card.Text>
               {product.currency_id} {product.price} {product.id}
+              <p data-testid="shopping-cart-product-quantity">1</p>
             </Card.Text>
           </Card.Body>
         </Card>

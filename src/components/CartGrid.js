@@ -7,13 +7,11 @@ class CartGrid extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cartLength : this.props.cart.length
-    }
+      cartLength: this.props.cart.length,
+    };
   }
   render() {
     const { cart } = this.props;
-    console.log(this.state.cartLength)
-    
     return (
       <CardDeck>
         {cart.length === 0 ? (

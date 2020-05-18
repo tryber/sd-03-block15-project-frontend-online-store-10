@@ -15,7 +15,6 @@ class ProductDetails extends React.Component {
   }
 
   addNewItem() {
-    console.log(this.props)
     this.props.addToCart(this.props.location.state.product);
   }
 

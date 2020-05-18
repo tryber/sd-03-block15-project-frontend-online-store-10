@@ -5,7 +5,6 @@ import NavBar from '../components/NavBar';
 
 class CartScreen extends React.Component {
   render() {
-    console.log(this.props)
     const { cart } = this.props;
     return (
       <div>
