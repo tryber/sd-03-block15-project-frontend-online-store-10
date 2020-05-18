@@ -1,3 +1,4 @@
+import { connect } from 'react-redux';
 import React from 'react';
 import CartGrid from '../components/CartGrid';
 import NavBar from '../components/NavBar';
@@ -17,4 +18,6 @@ class CartScreen extends React.Component {
   }
 }
 
-export default CartScreen;
+const mapStateToProps = (state) => ({ cart: state.cart });
+export default connect(mapStateToProps)(CartScreen);
+

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Rating from './Rating';
+
 
 class ProductCard extends React.Component {
   render() {
@@ -26,7 +26,6 @@ class ProductCard extends React.Component {
             >
               Ver detalhes
             </Link>
-            <Rating />
           </Card.Body>
         </Card>
       </div>
