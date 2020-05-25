@@ -11,7 +11,7 @@ describe('Requisito 1', () => {
 
     return api.getCategories().then(categories => {
       expect(global.fetch).toHaveBeenCalled();
-      expect(global.fetch).toHaveBeenCalledWith('https://api.mercadolibre.com/sites/MLB/categories');
+      expect(global.fetch).toHaveBeenCalledWith('https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLB/categories');
       expect(categories).toEqual(mockedCategoriesResult);
     });
   });
