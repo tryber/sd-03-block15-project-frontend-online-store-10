@@ -13,15 +13,18 @@ class Home extends React.Component {
       categories: [],
       itensList: [],
     };
+    this.onSearchTextChange = this.onSearchTextChange.bind(this);
+    this.up = this.up.bind(this); 
   }
   componentDidMount() {
     api.getCategories().then(categories => this.setState({categories : categories}));
   }
 
-  onSearchTextChange = (e) => {
+  onSearchTextChange(e) {
     this.setState({ searchText: e.target.value });
   };
-  up = (is) =>{
+
+  up(is) {
     api.getProductsFromCategoryAndQuery(is,false).then(query => this.setState({itensList: query.results}));
   };
   onSearchtTextClick = () => {
