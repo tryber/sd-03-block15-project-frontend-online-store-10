@@ -14,7 +14,8 @@ class Home extends React.Component {
       itensList: [],
     };
     this.onSearchTextChange = this.onSearchTextChange.bind(this);
-    this.up = this.up.bind(this); 
+    this.up = this.up.bind(this);
+    this.onSearchtTextClick = this.onSearchtTextClick.bind(this);
   }
   componentDidMount() {
     api.getCategories().then(categories => this.setState({categories : categories}));
@@ -27,7 +28,8 @@ class Home extends React.Component {
   up(is) {
     api.getProductsFromCategoryAndQuery(is,false).then(query => this.setState({itensList: query.results}));
   };
-  onSearchtTextClick = () => {
+
+  onSearchtTextClick() {
     api.getProductsFromCategoryAndQuery(false,this.state.searchText).then(query => this.setState({itensList: query.results}));
   };
 
