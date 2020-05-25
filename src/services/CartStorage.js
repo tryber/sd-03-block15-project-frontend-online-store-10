@@ -38,9 +38,11 @@ export const updateMovie = (updatedMovie) => {
   });
 };
 
-const newMovie = convertItem(movieData);
-movies = [...movies, newMovie];
-saveMovies(movies);
+export const convertItem = (item, qtd = 1) => {
+  const { id, title, thumbnail, price } = item;
+  return ({
+    id, title, thumbnail, price, qtd,
+  });
 };
 
 export const createMovie = (movieData) => {
@@ -50,13 +52,11 @@ export const createMovie = (movieData) => {
     localStorage.setItem('movies', JSON.stringify([convertItem(movieData)]));
     return;
   }
-
-export const convertItem = (item, qtd = 1) => {
-  const { id, title, thumbnail, price } = item;
-  return ({
-    id, title, thumbnail, price, qtd,
-  });
+  const newMovie = convertItem(movieData);
+  movies = [...movies, newMovie];
+  saveMovies(movies);
 };
+
 export const deleteMovie = (movieId) => {
   let movies = readMovies();
   movies = movies.find((movie) => movie.id !== parseInt(movieId, 10));
