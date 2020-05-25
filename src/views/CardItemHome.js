@@ -11,7 +11,7 @@ class CardItemHome extends React.Component {
         {title}
         {thumbnail}
         {price}
-        <Link data-testid='product-detail-link' to={{ pathname: `/Detail`, state: { product } }}>detail</Link>
+        <Link data-testid="product-detail-link" to={{ pathname: '/Detail', state: { product } }}>detail</Link>
       </div>
     );
   }
