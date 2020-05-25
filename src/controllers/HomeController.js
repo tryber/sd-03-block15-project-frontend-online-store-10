@@ -18,22 +18,22 @@ class Home extends React.Component {
     this.onSearchtTextClick = this.onSearchtTextClick.bind(this);
   }
   componentDidMount() {
-    api.getCategories().then(categories => this.setState({categories : categories}));
+    api.getCategories().then((categories) => this.setState({ categories: categories }));
   }
 
   onSearchTextChange(e) {
     this.setState({ searchText: e.target.value });
-  };
-
-  up(is) {
-    api.getProductsFromCategoryAndQuery(is,false).then(query =>
-      this.setState({itensList: query.results}));
-  };
+  }
 
   onSearchtTextClick() {
-    api.getProductsFromCategoryAndQuery(false,this.state.searchText).then((query) =>
+    api.getProductsFromCategoryAndQuery(false, this.state.searchText).then((query) =>
       this.setState({ itensList: query.results }));
-  };
+  }
+  
+  up(is) {
+    api.getProductsFromCategoryAndQuery(is, false).then(query =>
+      this.setState({ itensList: query.results }));
+  }
 
   render() {
     const { match: { params: { Id } } } = this.props;
