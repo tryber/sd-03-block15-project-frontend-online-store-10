@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import * as cart from '../services/CartStorage';
 import Cardcheckout from '../views/cardchekout';
 
 class checkout extends React.Component {
@@ -9,12 +7,12 @@ class checkout extends React.Component {
     return (
       <div>
         <div className="categories">
-        {product.map((item) =>
-          <Cardcheckout
-            key={item.id}
-            item={item}
-          />)}
-      </div>
+          {product.map((item) =>
+            <Cardcheckout
+              key={item.id}
+              item={item}
+            />)}
+        </div>
         <input
           data-testid="checkout-fullname"
         />
