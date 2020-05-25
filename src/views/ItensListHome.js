@@ -4,7 +4,7 @@ import CardItemHome from './CardItemHome';
 class ItensListHome extends React.Component {
   render() {
     if (!this.props.itensList.length) {
-      return ( <div data-testid="home-initial-message">
+      return (<div data-testid="home-initial-message">
         Digite algum termo de pesquisa ou escolha uma categoria.
       </div>
       );
@@ -14,7 +14,8 @@ class ItensListHome extends React.Component {
         {this.props.itensList.map((item) =>
           <CardItemHome
             key={item.id}
-            item={item} />,
+            item={item}
+          />,
         )}
       </div>
     );
