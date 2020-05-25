@@ -1,5 +1,5 @@
 export const getCategories = async () => {
-  const response = await fetch('https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/sites/MLB/categories');
+  const response = await fetch('https://api.mercadolibre.com/sites/MLB/categories');
   const categories = await response.json();
   return categories;
 };
