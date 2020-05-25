@@ -1,12 +1,12 @@
 .trybe-header {
-  height: 44px;
+  background-color: #0fa36b;
   display: flex;
   flex-direction: row;
-  background-color: #0fa36b;
+  height: 44px;
 }
 
 .trybe-nav {
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
 }
