@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import CardItemHome from './CardItemHome';
 
 class ItensListHome extends React.Component {
