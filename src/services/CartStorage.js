@@ -40,9 +40,7 @@ export const updateMovie = (updatedMovie) => {
 
 export const convertItem = (item, qtd = 1) => {
   const { id, title, thumbnail, price } = item;
-  return ({
-    id, title, thumbnail, price, qtd,
-  });
+  return ({ id, title, thumbnail, price, qtd });
 };
 
 export const createMovie = (movieData) => {
