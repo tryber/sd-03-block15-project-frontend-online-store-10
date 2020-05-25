@@ -5,7 +5,7 @@ import * as cart from '../services/CartStorage';
 class Cart extends React.Component {
   render() {
     if (cart.readMovies()) {
-      let products = cart.readMovies();
+      const products = cart.readMovies();
       return (
         <div>
           {products.map((item) =>

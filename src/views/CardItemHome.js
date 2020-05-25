@@ -13,7 +13,11 @@ class CardItemHome extends React.Component {
         {thumbnail}
         {price}
         <Link data-testid="product-detail-link" to={{ pathname: '/Detail', state: { product } }}>detail</Link>
-        <input type="button" data-testid="product-add-to-cart" onClick={() => cart.createMovie(product)} />
+        <input
+          type="button"
+          data-testid="product-add-to-cart"
+          onClick={() => cart.createMovie(product)}
+        />
       </div>
     );
   }
