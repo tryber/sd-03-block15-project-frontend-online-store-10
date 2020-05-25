@@ -7,10 +7,10 @@ class CategoriesHome extends React.Component {
       <div className="categories">
         {this.props.categories.map((item) =>
           <CardCategories
-          key={item.id}
-          id={item.id}
-          up={this.props.update}
-          categorie={item.name}
+            key={item.id}
+            id={item.id}
+            up={this.props.update}
+            categorie={item.name}
           />)}
       </div>
     );
