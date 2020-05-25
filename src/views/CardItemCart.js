@@ -22,8 +22,16 @@ class CardItemCart extends React.Component {
     return (
       <div>
         <form>
-          <label htmlFor="IncluiOTexto" data-testid="shopping-cart-product-name">{this.state.title}</label>
-          <label htmlFor="IncluiOTexto3" data-testid="shopping-cart-product-quantity">{this.state.qtd}</label>
+          <label 
+            htmlFor="IncluiOTexto"
+            data-testid="shopping-cart-product-name">
+            {this.state.title}
+          </label>
+          <label
+            htmlFor="IncluiOTexto3"
+            data-testid="shopping-cart-product-quantity">
+            {this.state.qtd}
+          </label>
           <input
             type="button"
             data-testid="product-increase-quantity"
