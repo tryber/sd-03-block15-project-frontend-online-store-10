@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import * as cart from '../services/CartStorage';
 
 class CardItemHome extends React.Component {
   render() {
@@ -12,6 +13,7 @@ class CardItemHome extends React.Component {
         {thumbnail}
         {price}
         <Link data-testid="product-detail-link" to={{ pathname: '/Detail', state: { product } }}>detail</Link>
+        <input type="button" data-testid="product-add-to-cart" onClick={() => cart.createMovie(product)} />
       </div>
     );
   }
