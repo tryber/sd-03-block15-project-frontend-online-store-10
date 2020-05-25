@@ -12,7 +12,7 @@ class CardItemCart extends React.Component {
 
   decrease() {
     this.setState((state) => ({
-       qtd: state.qtd - 1,  
+      qtd: state.qtd - 1,
       }));
   }
   increase() {
