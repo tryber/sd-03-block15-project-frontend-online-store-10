@@ -8,10 +8,9 @@ function Content() {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route  path="/Cart" component={Cart} />
+      <Route path="/Cart" component={Cart} />
       <Route path="/Detail" component={DetailProduct} />
       <Route path="/:Id" component={Home} />
-     
     </Switch>
   );
 }
